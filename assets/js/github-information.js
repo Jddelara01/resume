@@ -37,6 +37,9 @@ function repoInformationHTML(repos) {
 }
 
 function fetchGitHubInformation(event) {
+    $("#gh-user-data").html("");
+    $("#gh-repo-data").html("");
+
     var username = $("#gh-username").val(); // this targets the id gh-username value in the html
     if (!username) {
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`) // if username is empty, this will be displayed gh-user-data div
@@ -71,3 +74,5 @@ function fetchGitHubInformation(event) {
         }
     );
 }
+
+$(document).ready(fetchGitHubInformation);
